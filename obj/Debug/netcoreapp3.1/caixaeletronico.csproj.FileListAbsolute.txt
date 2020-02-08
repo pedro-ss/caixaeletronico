@@ -1,0 +1,11 @@
+/home/pedro/git/caixaeletronico/bin/Debug/netcoreapp3.1/caixaeletronico
+/home/pedro/git/caixaeletronico/bin/Debug/netcoreapp3.1/caixaeletronico.deps.json
+/home/pedro/git/caixaeletronico/bin/Debug/netcoreapp3.1/caixaeletronico.runtimeconfig.json
+/home/pedro/git/caixaeletronico/bin/Debug/netcoreapp3.1/caixaeletronico.runtimeconfig.dev.json
+/home/pedro/git/caixaeletronico/bin/Debug/netcoreapp3.1/caixaeletronico.dll
+/home/pedro/git/caixaeletronico/bin/Debug/netcoreapp3.1/caixaeletronico.pdb
+/home/pedro/git/caixaeletronico/obj/Debug/netcoreapp3.1/caixaeletronico.csprojAssemblyReference.cache
+/home/pedro/git/caixaeletronico/obj/Debug/netcoreapp3.1/caixaeletronico.AssemblyInfoInputs.cache
+/home/pedro/git/caixaeletronico/obj/Debug/netcoreapp3.1/caixaeletronico.AssemblyInfo.cs
+/home/pedro/git/caixaeletronico/obj/Debug/netcoreapp3.1/caixaeletronico.dll
+/home/pedro/git/caixaeletronico/obj/Debug/netcoreapp3.1/caixaeletronico.pdb
