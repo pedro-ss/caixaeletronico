@@ -30,7 +30,7 @@ namespace caixaeletronico
                     cliente.numeroConta = numeroDaConta;
                     cliente.senha = senha2;
                     conta.cliente = cliente;
-                    conta.saldo = 0.0;
+                    conta.saldo = 5000.0;
                     return conta;
                 }
                 else
@@ -47,7 +47,7 @@ namespace caixaeletronico
         {
             Boolean logged = false;
 
-            if ((cliente.numeroConta).Equals(conta.cliente.numeroConta) && (cliente.senha).Equals(conta.cliente.senha))
+            if ((conta.cliente != null) && (cliente.numeroConta).Equals(conta.cliente.numeroConta) && (cliente.senha).Equals(conta.cliente.senha))
             {
                 Console.WriteLine("Cliente Logado");
                 logged = true;
@@ -79,9 +79,11 @@ namespace caixaeletronico
                         Console.WriteLine("Digite a senha de sua conta: ");
                         clienteAcess.senha = Console.ReadLine();
 
-                       if(caixa.login(conta, clienteAcess)){
-                           Console.WriteLine("Seu saldo em conta é: ", conta.saldo);
-                       }
+                        if (caixa.login(conta, clienteAcess))
+                        {
+                            Console.WriteLine("Seu saldo em conta é: ");
+                            Console.WriteLine(conta.saldo);
+                        }
                     }
                 }
                 else
