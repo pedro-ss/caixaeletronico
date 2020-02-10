@@ -6,93 +6,57 @@ namespace caixaeletronico
     {
         public void menu()
         {
+            Console.WriteLine("#######################################");
             Console.WriteLine("Seja bem vindo ao caixa do seu banco.");
             Console.WriteLine("Favor selecionar uma das opções abaixo:");
             Console.WriteLine("1 - Criar conta");
             Console.WriteLine("2 - Fazer login em conta");
             Console.WriteLine("3 - Sair");
+            Console.WriteLine("######################################");
         }
-
-        public Conta criarConta(Conta conta, Cliente cliente)
+        public void criarConta(Conta account, Cliente user)
         {
-
-            String numeroDaConta = "1234-5";
-            String senha1, senha2;
-
-            do
-            {
-                Console.WriteLine("Favor digite sua senha para posterior acesso:");
-                senha1 = Console.ReadLine();
-                Console.WriteLine("Favor digite novamente sua senha:");
-                senha2 = Console.ReadLine();
-                if (senha1.Equals(senha2))
-                {
-                    cliente.numeroConta = numeroDaConta;
-                    cliente.senha = senha2;
-                    conta.cliente = cliente;
-                    conta.saldo = 5000.0;
-                    return conta;
-                }
-                else
-                {
-                    Console.WriteLine("Senhas diferentes");
-
-                }
-            } while (!senha1.Equals(senha2));
-
-            return conta;
+            Console.WriteLine("Conta criada");
         }
-
-        public Boolean login(Conta conta, Cliente cliente)
+        public void login(Conta account, Cliente user)
         {
-            Boolean logged = false;
-
-            if ((conta.cliente != null) && (cliente.numeroConta).Equals(conta.cliente.numeroConta) && (cliente.senha).Equals(conta.cliente.senha))
+            Console.WriteLine("Conta acessada");
+        }
+        public void limparLinha()
+        {
+            for (int cont = 0; cont < 10; cont++)
             {
-                Console.WriteLine("Cliente Logado");
-                logged = true;
+                Console.WriteLine("");
             }
-            return logged;
+        }
+
+        public void escolhaMenu(int escolhaUser)
+        {
+            if (escolhaUser == 1)
+            {
+                criarConta(null, null);
+            }
+            else if (escolhaUser == 2)
+            {
+                login(null, null);
+            }
+            else
+            {
+                Console.WriteLine("#######################################");
+                Console.WriteLine(" Obrigado e volte sempre!");
+                Console.WriteLine("#######################################");
+            }
         }
         static void Main(string[] args)
         {
-            int option = -1;
             CaixaEletronico caixa = new CaixaEletronico();
-            Cliente cliente = new Cliente();
-            Conta conta = new Conta();
+            Cliente marta = new Cliente();
+            Conta contaMarta = new Conta();
 
-            while (option != 3)
-            {
-                caixa.menu();
-                option = int.Parse(Console.ReadLine());
-                if (option > 0 && option <= 3)
-                {
-                    if (option == 1)
-                    {
-                        conta = caixa.criarConta(conta, cliente);
-                    }
-                    else if (option == 2)
-                    {
-                        Cliente clienteAcess = new Cliente();
-                        Console.WriteLine("Digite o numero da conta de acesso: ");
-                        clienteAcess.numeroConta = Console.ReadLine();
-                        Console.WriteLine("Digite a senha de sua conta: ");
-                        clienteAcess.senha = Console.ReadLine();
-
-                        if (caixa.login(conta, clienteAcess))
-                        {
-                            Console.WriteLine("Seu saldo em conta é: ");
-                            Console.WriteLine(conta.saldo);
-                        }
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Opção inválida!");
-                }
-
-            }
-
+            caixa.menu();
+            int escolhaUser = int.Parse(Console.ReadLine());
+            caixa.escolhaMenu(escolhaUser);
+            
         }
     }
 }
